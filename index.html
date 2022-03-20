@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora 1.0</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+    <main class="conteudo">
+        <section id="sessao1">
+            <h1 id="titulo">Calculadora 1.0</h1>
+            <p>Conheça a minha mais nova invenção! Ela faz cálculos para você, basta você entregar os dados a ela!</p>
+            <div class="periferico">
+                <aside>
+                    <p>PS: Este é só um protótipo...</p>
+                </aside>
+            </div>
+        </section>
+        <section id="sessao2">
+            <div class="guia">
+                <p>Clique na operação que você deseja realizar</p>
+            </div>
+            <div class="operador" id="soma">
+                <p>Adição</p>
+            </div>
+            <div class="operador" id="menos">
+                <p>Subtração</p>
+            </div>
+            <br>
+            <div class="operador" id="multiplicacao">
+                <p>Multiplicação</p>
+            </div>
+            <div class="operador" id="divisao">
+                <p>Divisão</p>
+            </div>
+            <div>
+                <p class="guia" id="resultadofinal">Resultado:</p>
+                <p id="res">(Resultado aparecerá aqui)</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Id's: soma, menos, multiplicacao, divisao
+
+        // variáveis:
+
+        var mais = document.getElementById('soma');
+        mais.addEventListener('click', somar);
+
+        var menos = document.getElementById('menos');
+        menos.addEventListener('click', subtrair);
+
+        var multiplica = document.getElementById('multiplicacao');
+        multiplica.addEventListener('click', multiplicar);
+
+        var divisao = document.getElementById('divisao');
+        divisao.addEventListener('click', dividir);
+
+        // funções:
+        // soma:
+        function somar() {
+            var n1 = Number(window.prompt('Você escolheu soma! Digite o 1º número:'));
+            var n2 = Number(window.prompt('Digite o 2º número:'));
+            var res = document.getElementById('res');
+            // var num1 = Number(n1.value);
+            // var num2 = Number(n2.value);
+            var r = n1 + n2
+            res.innerHTML = `Primeiro Número: ${n1} <br> Segundo Número: ${n2} <br> Resultado da Soma: ${r} <br> Expressão do cálculo: ${n1} + ${n2} = ${r}`
+        }
+
+        // subtração:
+        function subtrair() {
+            var n1 = Number(window.prompt('Você escolheu subtração! Digite o 1º número:'));
+            var n2 = Number(window.prompt('Digite o 2º número:'));
+            var res = document.getElementById('res');
+            // var num1 = Number(n1.value);
+            // var num2 = Number(n2.value);
+            var r = n1 - n2
+            res.innerHTML = `Primeiro Número: ${n1} <br> Segundo Número: ${n2} <br> Resultado da Subtração: ${r} <br> Expressão do cálculo: ${n1} - ${n2} = ${r}`
+        }
+
+        // multiplicação:
+        function multiplicar() {
+            var n1 = Number(window.prompt('Você escolheu multiplicação! Digite o 1º número:'));
+            var n2 = Number(window.prompt('Digite o 2º número:'));
+            var res = document.getElementById('res');
+            // var num1 = Number(n1.value);
+            // var num2 = Number(n2.value);
+            var r = n1 * n2
+            res.innerHTML = `Primeiro Número: ${n1} <br> Segundo Número: ${n2} <br> Resultado da Multiplicação: ${r} <br> Expressão do cálculo: ${n1} x ${n2} = ${r}`
+        }
+
+        // divisão:
+        function dividir() {
+            var n1 = Number(window.prompt('Você escolheu divisão! Digite o 1º número:'));
+            var n2 = Number(window.prompt('Digite o 2º número:'));
+            var res = document.getElementById('res');
+            // var num1 = Number(n1.value);
+            // var num2 = Number(n2.value);
+            var r = n1 / n2
+            res.innerHTML = `Primeiro Número: ${n1} <br> Segundo Número: ${n2} <br> Resultado da Divisão: ${r} <br> Expressão do cálculo: ${n1} ÷ ${n2} = ${r}`
+        }
+    </script>
+</body>
+</html>
